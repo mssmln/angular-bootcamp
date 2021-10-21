@@ -1,0 +1,15 @@
+<h3>dati della persona</h3>
+
+<div>
+    {{persona.n}}
+    {{persona.c}}
+    {{persona.y}}
+</div>
+
+
+<h3>dati delle persone in elenco</h3>
+<div *ngFor="let el of elencoPersone">
+    {{el.n}}
+    {{el.c}}
+    {{el.y}}
+</div>

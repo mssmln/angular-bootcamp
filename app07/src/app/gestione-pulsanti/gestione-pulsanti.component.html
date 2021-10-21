@@ -1,0 +1,9 @@
+<h2>gestione pulsanti</h2>
+<!-- <button *ngFor="let t of testiPulsanti" 
+    (click)="onClick(t)">{{t}}</button> -->
+<app-pulsante *ngFor="let t of testiPulsanti" 
+    [testo]="t" (btnClicked)="catturaEvento($event)">
+</app-pulsante>
+<!-- abbiamo sosituito il button tag con app pulsante tag  -->
+<!-- viene da fuori , è gestito dal comp genitore, abbiamo usato @input -->
+

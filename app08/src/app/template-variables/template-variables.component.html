@@ -1,0 +1,25 @@
+<h3>esempio if-else</h3>
+<p>vedo se n minore di 10</p>
+<p *ngIf="n < 10; else alternativa">{{n}} minore di 10</p>
+
+<ng-template #alternativa>{{n}} < di 10</ng-template>
+
+<h3>esempio recupero dati da un elemento html mappato con #</h3>
+<p>
+    digita un colore: <input type="text" #colore>
+    <button (click)="prendiColore(colore)">invia</button>
+</p>
+
+
+<h3>gestione di persone</h3>
+<p>
+    nome: <input type="text" #nome>
+    cog: <input type="text" #cog>
+    <button (click)="inserisci(nome,cog)">inserisci</button>
+</p>
+<ul>
+    <li *ngFor="let p of persone; let i = index">
+        {{p.nome + ' ' + p.cog}} 
+        <button (click)="elimina(i)">x</button>
+    </li>
+</ul>

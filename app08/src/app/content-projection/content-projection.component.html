@@ -1,0 +1,15 @@
+<h3>esempio con btn semplice</h3>
+<app-pulsante>aggiungi</app-pulsante>
+<app-pulsante>elimina</app-pulsante>
+<app-pulsante>chiudi</app-pulsante>
+
+
+<h3>esempio con lista di pulsanti</h3>
+<app-pulsante *ngFor="let e of elenco">{{e}}</app-pulsante>
+
+
+<h3>elendo di prodotti</h3>
+<app-prodotto *ngFor="let p of prodotti">{{p}}
+    <span nome>{{p.nome}}</span>
+    <span descrizione>{{p.descrizione}}</span>
+    <span prezzo>{{p.prezzo}}</span>

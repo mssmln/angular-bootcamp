@@ -1,0 +1,17 @@
+<h2>direttive di scelta</h2>
+<p *ngIf="!visibile">paragrafo visibile</p>
+
+<p *ngIf="n > 5">{{n}} maggiore di 5</p>
+<app-componente *ngIf="mostraComp"></app-componente>
+
+
+<div *ngIf="p">
+    <p>{{p.nome}}</p>
+</div>
+
+<p [ngSwitch]="col">
+    <span *ngSwitchCase="'blu'">colore del mare</span>
+    <span *ngSwitchCase="'nero'">colore della notte</span>
+    <span *ngSwitchCase="'giallo'">colore del sole</span>
+    <span *ngSwitchDefault="">colore non specificato</span>
+</p>

@@ -1,0 +1,10 @@
+<div>{{persona.nome}}</div>
+<div>{{persona.cog}}</div>
+<div>{{persona.anni}}</div>
+
+
+<input type="text" [(ngModel)]="persona.nome">nome <br> 
+<!-- cambi i dati anche nel model perchè è bidirezionale -->
+<!-- col two-way binding non c'è controllo sugli input  -->
+<input type="text" [(ngModel)]="persona.cog">cognome <br>
+<input type="text" [(ngModel)]="persona.anni">anni

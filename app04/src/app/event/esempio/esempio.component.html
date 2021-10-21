@@ -1,0 +1,9 @@
+<h3>chiamata metodo</h3>
+<div [innerHTML]="display"></div>
+<button (click)="onClick()">clicca</button>
+<button (click)="onReset()">reset</button>
+
+<input type="text" name="" id="" [disabled]="disabilitato">
+<button (click)="cambioStato()">
+    {{disabilitato ? 'attiva' : 'disattiva'}}
+</button>

@@ -1,0 +1,14 @@
+<h2>direttive di iterazione</h2>
+<p>elenco dei colori</p>
+<ul>
+    <li *ngFor="let c of col; let i = index">questo è un {{c}} in posizione {{i}}</li>
+</ul>
+
+
+<p>elenco di oggetti</p>
+<ol>
+    <li *ngFor="let p of p">
+        {{p.n}}
+        {{p.cog}}
+    </li>
+</ol>

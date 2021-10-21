@@ -1,0 +1,26 @@
+div {
+    width: 25%;
+    border: 5px solid red;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+}
+
+
+p {
+    text-align: right;
+}
+
+h3, h4 {
+    margin: 0;
+}
+
+
+p::before {
+    content: '€. ';
+}
