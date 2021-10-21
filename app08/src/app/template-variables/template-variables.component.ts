@@ -8,7 +8,7 @@ import { Persona } from '../models/persona';
 })
 export class TemplateVariablesComponent implements OnInit {
 
-  n = 5;
+  n = 11;
   persone: Persona[];
 
   constructor() {
@@ -23,6 +23,7 @@ export class TemplateVariablesComponent implements OnInit {
   }
 
   prendiColore(colore:any):void{
+    console.log(colore.value);
     alert('il tuo colore è' + colore.value);
   }
 
