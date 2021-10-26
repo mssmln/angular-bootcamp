@@ -10,7 +10,8 @@ export class AppComponent {
 
   direttive: boolean= false;
   content: boolean= false;
-  template:boolean= true;
+  template:boolean= false;
+  pipes:boolean = true;
 
   mostraDirettiva():void{
     this.direttive = !this.direttive;
@@ -22,6 +23,10 @@ export class AppComponent {
 
   mostraTemplate():void{
     this.template = !this.template;
+  }
+
+  mostraPipes():void{
+    this.pipes= !this.pipes;
   }
 
 

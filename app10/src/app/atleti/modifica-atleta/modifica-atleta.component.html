@@ -1,0 +1,13 @@
+<h2>modifica atleta</h2>
+
+<p>
+    compila i campi per aggiornare l'atleta con id {{atleta.id}}
+</p>
+<p>
+    <input type="text" #nome [value]="atleta.nome">nome
+    <input type="text" #cognome [value]="atleta.cognome">cognome
+    <input type="text" #punti [value]="atleta.punteggio">punti
+    <button (click)="conferma(nome,cognome,punti)">conferma</button>
+    <button routerLink="/atleti/{{atleta.id}}">annulla</button>
+    <button (click)="elimina()">elimina</button>
+</p>

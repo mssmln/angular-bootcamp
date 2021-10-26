@@ -23,3 +23,10 @@
         <button (click)="elimina(i)">x</button>
     </li>
 </ul>
+
+<h3>viewChild</h3>
+<div #display></div>
+
+<h3>richiamo metodi di componenti annidati</h3>
+<app-pizza #pizza></app-pizza>
+<button (click)="pizza.vediDati()">vedi i dati della pizza - non fa parte del comp pizza</button>

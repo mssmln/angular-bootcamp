@@ -1,0 +1,36 @@
+<h3>numeri</h3>
+<p>numero {{n | number : '.2-2'}}</p> 
+
+
+<h3>stringhe</h3>
+<p>{{nome | uppercase}}</p>
+<p>{{nome | lowercase}}</p>
+<p>{{nome | slice:0:1}}</p>
+<p>{{nome | slice:1}}</p>
+<p>{{nome | slice:-1}}</p>
+<p>{{mese | slice:0:3 | uppercase}}</p>
+
+
+<h3>percentuali</h3>
+<p>iva {{iva | percent}}</p>
+
+<h3>date e orari</h3>
+<!-- E giorno della settimana, d giorno numero, M mese numero, y anno numero -->
+<p>oggi {{oggi | date: 'yyyy'}}</p>
+<p>oggi {{oggi | date: 'yy'}}</p>
+<p>oggi {{oggi | date: 'dd/MM/yy'}}</p>
+<p>oggi {{oggi | date: 'dd/MMM/yy'}}</p>
+<p>oggi {{oggi | date: 'dd/MMMM/yy'}}</p>
+<p>oggi {{oggi | date: 'EEE dd MM yyyy'}}</p>
+<p>oggi {{oggi | date: 'shortDate'}}</p>
+<p>oggi {{oggi | date: 'shortTime'}}</p>
+<p>oggi {{oggi | date: 'mediumTime'}}</p>
+<p>oggi {{oggi | date: 'longTime'}}</p>
+<p>oggi {{oggi | date: 'fullTime'}}</p>
+
+
+
+<h3>prezzo</h3>
+<p>{{p | currency}}</p>
+<p>{{p | currency: "€"}}</p>
+<p>{{p | currency: "GBP"}}</p>

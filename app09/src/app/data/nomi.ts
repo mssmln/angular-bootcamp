@@ -1,0 +1,1 @@
+export const NOMI:string[] = ["max","gio","mic","fede"];

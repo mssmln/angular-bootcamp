@@ -1,0 +1,19 @@
+nav{
+    background-color:green;
+    padding: 1em 20px;
+}
+
+a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+a:link,a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover,a:active{
+    color: white;
+}

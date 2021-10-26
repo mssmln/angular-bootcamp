@@ -7,6 +7,8 @@ import { ContentProjectionComponent } from './content-projection/content-project
 import { PulsanteComponent } from './shared/pulsante/pulsante.component';
 import { ProdottoComponent } from './shared/prodotto/prodotto.component';
 import { TemplateVariablesComponent } from './template-variables/template-variables.component';
+import { PizzaComponent } from './pizza/pizza.component';
+import { EsempiPipesComponent } from './esempi-pipes/esempi-pipes.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { TemplateVariablesComponent } from './template-variables/template-variab
     ContentProjectionComponent,
     PulsanteComponent,
     ProdottoComponent,
-    TemplateVariablesComponent
+    TemplateVariablesComponent,
+    PizzaComponent,
+    EsempiPipesComponent
   ],
   imports: [
     BrowserModule

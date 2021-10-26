@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Persona } from '../models/persona';
 
 @Component({
@@ -10,6 +10,8 @@ export class TemplateVariablesComponent implements OnInit {
 
   n = 11;
   persone: Persona[];
+
+  @ViewChild('display') display!: ElementRef; // siamo sicuri che esista nel html con il !
 
   constructor() {
     this.persone=[ 
@@ -34,8 +36,12 @@ export class TemplateVariablesComponent implements OnInit {
   }
 
   elimina(indice:number):void{
-    if(confirm('sei sicuro di eliminare ' + this.persone[indice].nome + "?")) this.persone.splice(indice,1);
+    if(confirm('sei sicuro di eliminare ' + this.persone[indice].nome + "?")) {
+      // aggiorno il display 
+      this.display.nativeElement.innerHTML += "eliminato " + this.persone[indice].nome + "<br>";
 
+      this.persone.splice(indice,1);
+    }
   }
 
 }
