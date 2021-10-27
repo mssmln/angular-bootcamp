@@ -1,0 +1,10 @@
+<nav>
+    <a routerLink="home" routerLinkActive="active">home</a> 
+    <a routerLink="reparti" routerLinkActive="active">reparti</a> 
+    <a routerLink="pazienti" routerLinkActive="active"
+     *ngIf="utente.autenticato">pazienti</a> 
+    <a routerLink="login" routerLinkActive="active"
+     *ngIf="!utente.autenticato">login</a>
+    <a routerLink=";" *ngIf="utente.autenticato" 
+    (click)="logout()">logout</a>
+</nav>
