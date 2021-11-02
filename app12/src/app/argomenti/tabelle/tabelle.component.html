@@ -1,0 +1,138 @@
+<div class="container">
+    <h2>tabelle</h2>
+
+    <h3>tabella normale</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>cognome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>max</td>
+                <td>cr</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>gian</td>
+                <td>cr</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>fede</td>
+                <td>cr</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h3>tabella con bordi</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>cognome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>max</td>
+                <td>cr</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>gian</td>
+                <td>cr</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>fede</td>
+                <td>cr</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>tabella a striscie</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>cognome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>max</td>
+                <td>cr</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>gian</td>
+                <td>cr</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>fede</td>
+                <td>cr</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h3>tabella scura</h3>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>cognome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>max</td>
+                <td>cr</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>gian</td>
+                <td>cr</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>fede</td>
+                <td>cr</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h3>tabella dinamica</h3>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>cognome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of persone">
+                <td>{{p.id}}</td>
+                <td>{{p.nome}}</td>
+                <td>{{p.cognome}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,75 @@
+<h2>HTML5 forms</h2>
+
+<!-- quando usiamo il FormsModule, angular disattiva tutte le validazioni lato html5  -->
+<!-- e se tu vuoi continuare ad utilizzarle ti serve mettere nel tag form ngNativeValidate -->
+<form ngNativeValidate>
+    <label for="nome">Nome</label><br>
+    <input type="text" name="nome" id="nome" required> <br>
+
+    <label for="cognome">Cognome</label><br>
+    <!-- con size indichiamo la lunghezza della input graficamente -->
+    <input type="text" name="cognome" size="8" autocomplete="off"> <br>
+
+    <label for="password">Password</label><br>
+    <input type="password" name="password" maxlength="8"> <br>
+
+    <label for="anni">Anni</label><br>
+    <input type="number" name="anni" min="18" max="90"> <br>
+
+    <label for="codice">Codice</label><br>
+    <input type="text" name="codice" id="codice" disabled value="65"> <br>
+
+    <input type="hidden" name="id" value="23">
+
+    <!-- The <fieldset> tag is used to group related elements in a form. -->
+    <!-- The <fieldset> tag draws a box around the related elements. -->
+    <fieldset>
+        <!-- The <legend> tag is used to define a caption for the <fieldset> element. -->
+        <legend>Laurea</legend>
+        <input type="radio" name="laurea" id="laureasi" value="si">
+        <label for="laureasi">SI</label>
+        <input type="radio" name="laurea" id="laureano" value="no">
+        <label for="laureano">NO</label>
+        <input type="radio" name="laurea" id="laureano" value="quasi">
+        <label for="laureaquasi">In attesa di proclamazione</label>
+    </fieldset>
+
+    <label for="telefono">Numero di telefono</label> <br>
+    <!-- da 0 a 9, {3} caratteri al massimo, da {4 a 7} -->
+    <input type="tel" name="telefono" id="telefono" pattern="+39-[0-9]{3}-[0-9]{4,7}" placeholder="+39-000-0000"> <br>
+
+    <label for="email">E-mail</label> <br>
+    <input type="email" name="email" id="email" placeholder="info@mail.com"> <br>
+
+    <fieldset>
+        <legend>Interessi</legend>
+        <input type="checkbox" name="interessi" id="intviaggi" value="viaggi">
+        <label for="intviaggi">Viaggi</label>
+        <input type="checkbox" name="interessi" id="intmusica" value="musica">
+        <label for="intmusica">Musica</label>
+        <input type="checkbox" name="interessi" id="intcibo" value="cibo">
+        <label for="intcibo">Cibo</label>
+    </fieldset>
+
+    <label for="datacolloquio">Data colloquio</label> <br>
+    <input type="date" name="datacolloquio" id="datacolloquio" min="2021-12-01" max="2022-01-15"> <br>
+
+    <label for="oracolloquio">Ora colloquio</label> <br>
+    <input type="time" name="oracolloquio" id="oracolloquio" min="09:00" max="12:00"> <br>
+
+    <label for="cv">Carica il tuo cv</label> <br>
+    <input type="file" name="cv" id="cv"> <br>
+
+    <label for="esperienza">Livello di esperienza</label> <br>
+    <select name="esperienza" id="esperienza">
+        <option value="junior">Fino a 3 anni</option>
+        <option value="senior">Oltre 3 anni</option>
+    </select><br>
+
+    <label for="commenti">Lasciaci un commento</label> <br>
+    <textarea name="commenti" id="commenti" cols="30" rows="10">
+    </textarea> <br>
+
+    <input type="submit" value="invia">
+    <input type="reset" value="cancella">
+</form>

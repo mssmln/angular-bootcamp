@@ -1,0 +1,87 @@
+<h2>Bootstrap forms</h2>
+
+<form class="w-50" ngNativeValidate>
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" name="nome" id="nome" required class="form-control  mb-3">
+
+    <label for="nome" class="form-label">Cognome</label>
+    <input type="text" name="cognome" size="8" autocomplete="off" class="form-control mb-3">
+
+    <label for="password" class="form-label">Password</label>
+    <input type="password" name="password" maxlength="8" class="form-control mb-3">
+
+    <label for="anni" class="form-label">Anni</label>
+    <input type="number" name="anni" min="18" max="90" class="form-control mb-3">
+
+    <label for="codice" class="form-label">Codice</label>
+    <input type="text" name="codice" id="codice" disabled value="65" class="form-control-plaintext mb-3">
+
+    <input type="hidden" name="id" value="23">
+
+    <fieldset class="mb-3">
+        <legend>Laurea</legend>
+        <div class="form-check">
+            <input type="radio" name="laurea" id="laureasi" value="si" class="form-check-input">
+            <label for="laureasi" class="form-check-label">SI</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="laurea" id="laureano" value="no" class="form-check-input" checked>
+            <label for="laureano" class="form-check-label">NO</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="laurea" id="laureano" value="quasi" class="form-check-input">
+            <label for="laureaquasi" class="form-check-label">In attesa di proclamazione</label>
+        </div>
+    </fieldset>
+
+    <div class="input-group">
+        <label for="telefono" class="input-group-text">Numero di telefono</label>
+        <input type="tel" name="telefono" id="telefono" pattern="+39-[0-9]{3}-[0-9]{4,7}" placeholder="+39-000-0000"
+            class="form-control">
+    </div>
+
+
+    <div class="input-group mb-3">
+        <label for="email" class="input-group-text">E-mail</label>
+        <input type="email" name="email" id="email" placeholder="info@mail.com" class="form-control">
+    </div>
+
+    <fieldset class="mb-3">
+        <legend>Interessi</legend>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" name="interessi" id="intviaggi" value="viaggi" class="form-check-input">
+            <label for="intviaggi" class="form-check-label">Viaggi</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" name="interessi" id="intmusica" value="musica" class="form-check-input">
+            <label for="intmusica" class="form-check-label">Musica</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" name="interessi" id="intcibo" value="cibo" class="form-check-input">
+            <label for="intcibo" class="form-check-label">Cibo</label>
+        </div>
+    </fieldset>
+
+    <label for="datacolloquio" class="form-label">Data colloquio</label>
+    <input type="date" name="datacolloquio" id="datacolloquio" min="2021-12-01" max="2022-01-15"
+        class="form-control mb-3">
+
+    <label for="oracolloquio" class="form-label">Ora colloquio</label>
+    <input type="time" name="oracolloquio" id="oracolloquio" min="09:00" max="12:00" class="form-control mb-3">
+
+    <label for="cv" class="form-label">Carica il tuo cv</label>
+    <input type="file" name="cv" id="cv" class="form-control mb-3">
+
+    <label for="esperienza" class="form-label">Livello di esperienza</label>
+    <select name="esperienza" id="esperienza" class="form-select mb-3">
+        <option value="junior">Fino a 3 anni</option>
+        <option value="senior">Oltre 3 anni</option>
+    </select>
+
+    <label for="commenti" class="form-label mb-3">Lasciaci un commento</label>
+    <textarea name="commenti" id="commenti" cols="30" rows="10" class="form-control">
+    </textarea>
+
+    <input type="submit" value="invia" class="btn btn-primary">
+    <input type="reset" value="cancella" class="btn btn-warning">
+</form>
