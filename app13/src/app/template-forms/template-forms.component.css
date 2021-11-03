@@ -1,0 +1,17 @@
+/* input.ng-toucned,select.ng-touched{
+    background-color:red;
+} */
+
+
+/* .ng-touched:not(form){
+    background-color: blue;
+}
+
+.ng-dirty:not(form){
+    background-color: green;
+} */
+
+
+/* .ng-invalid:not(form){
+    outline:5px dashed red;
+} */

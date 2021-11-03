@@ -8,7 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { Html5FormsComponent } from './html5-forms/html5-forms.component';
 import { BootstrapFormsComponent } from './bootstrap-forms/bootstrap-forms.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ReactiveFormBuilderComponent } from './reactive-form-builder/reactive-form-builder.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     Html5FormsComponent,
     BootstrapFormsComponent,
-    TemplateFormsComponent
+    TemplateFormsComponent,
+    ReactiveFormsComponent,
+    ReactiveFormBuilderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

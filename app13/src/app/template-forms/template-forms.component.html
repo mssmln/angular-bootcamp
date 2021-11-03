@@ -3,14 +3,41 @@
 <div class="row">
     <div class="col">
         <h3>Form Utente</h3>
-        <form #formUtente="ngForm">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" name="nome" id="nome" required class="form-control mb-3" 
-            [(ngModel)]="dati.nome">
+        <form #formUtente="ngForm" (ngSubmit)="onSubmit(formUtente)" [hidden]="submitOk">
 
-            <label for="nome" class="form-label">Cognome</label>
-            <input type="text" name="cognome" class="form-control mb-3" 
-            [(ngModel)]="dati.cognome">
+            <div class="alert alert-danger" *ngIf="formUtente.submitted && formUtente.invalid">
+                <h4>controlla i dati inseriti</h4>
+                <p>errori nei campi da te modificati o non hai compilato i campi obbligatori</p>
+            </div>
+
+
+
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <!-- .is-invalid è una classe di bootstrap -->
+                <input type="text" name="nome" id="nome" required class="form-control " 
+                [(ngModel)]="dati.nome" #nome="ngModel" [class.is-invalid]="(nome.invalid && nome.touched) 
+                || (formUtente.submitted && nome.invalid)">
+    
+                <!-- <div class="alert alert-danger" *ngIf="nome.errors"> -->
+                <!-- commentato sopra per usare la classe di bootstrap invalid-feedback al posto di ngIf -->
+                <div class="invalid-feedback">
+                    nome obbligatorio
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="nome" class="form-label">Cognome</label>
+                <input type="text" name="cognome" class="form-control " 
+                [(ngModel)]="dati.cognome" minlength="2" #cognome="ngModel" [class.is-invalid]="(cognome.invalid && cognome.touched) 
+                || (formUtente.submitted && cognome.invalid)">
+    
+                <!-- <div class="alert alert-danger" *ngIf="cognome.errors"> -->
+                <div class="invalid-feedback">
+                    cognome se presente deve avere almeno due lettere
+                </div>
+            </div>
+
 
             <fieldset class="mb-3">
                 <legend>Interessi</legend>
@@ -62,9 +89,20 @@
                 [(ngModel)]="dati.commenti">
             </textarea>
 
-            <input type="submit" value="invia" class="btn btn-primary">
+            <!-- <input type="submit" value="invia" class="btn btn-primary" [disabled]="!formUtente.valid"> -->
+            <input type="submit" value="invia" class="btn btn-primary" >
+
             <input type="reset" value="cancella" class="btn btn-warning">
         </form>
+
+
+        <div class="alert alert-success" *ngIf="submitOk">
+            <h3>dati inviati correttamente</h3>
+            <p>grazie per esserti registrato</p>
+        </div>
+
+
+
     </div>
     <div class="col">
         <h3>Dati del form</h3>
@@ -81,9 +119,18 @@
         <h3>Stato del form</h3>
         <ul>
             <!-- ci stiamo riferendo a <form #formUtente="ngForm"> -->
+            <!-- con touched il campo è stato visitato (focus) -->
             <li>Form touched: {{formUtente.touched}}</li>
+            <!-- con dirty il campo ha cambiato il suo valore iniziale -->
             <li>Form dirty: {{formUtente.dirty}}</li>
+            <!-- con valid il campo è valido -->
             <li>Form valid: {{formUtente.valid}}</li>
+            <!-- hai cliccato il tasto submit  -->
+            <li>Form submitted: {{formUtente.submitted}}</li>
+
+            <!-- untouched il campo non è stato visitato -->
+            <!-- pristine il campo è intatto -->
+            <!-- invalid il campo è invalido -->
         </ul>
     </div>
 </div>

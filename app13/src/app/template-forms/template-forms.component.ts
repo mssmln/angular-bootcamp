@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { DatiUtente } from '../models/dati-utente';
 
 @Component({
@@ -9,17 +10,18 @@ import { DatiUtente } from '../models/dati-utente';
 export class TemplateFormsComponent implements OnInit {
   datiModel: DatiUtente;
   dati: DatiUtente;
+  submitOk:boolean=false;
 
   constructor() {
     // dati iniziali del form
     this.datiModel = {
-      "nome": "pippo",
-      "cognome": "pluto",
+      "nome": "",
+      "cognome": "",
       "intviaggi": false,
       "intmusica": false,
       "intcibo": false,
-      "laurea": "no",
-      "esperienza": "junior",
+      "laurea": "",
+      "esperienza": "",
       "commenti": ""
     };
     // dati che l'utente ha modificato nel form
@@ -34,6 +36,16 @@ export class TemplateFormsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+
+  onSubmit(form:NgForm):void{
+    if(form.valid){
+      alert('form valido');
+      this.submitOk=true;
+    } else{
+      // alert('non è valido e non verrà inviato');
+    }
   }
 
 }
