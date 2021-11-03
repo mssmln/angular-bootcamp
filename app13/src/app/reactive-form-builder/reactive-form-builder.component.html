@@ -1,0 +1,101 @@
+<h2>reactive form builder</h2>
+
+<div class="row">
+    <div class="col">
+        <h3>login form</h3>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="username" class="form-label">username</label>
+                <input [class.is-invalid]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" 
+                formControlName="username"  type="text" name="username" class="form-control ">
+                <div class="invalid-feedback">
+                    <p *ngIf="loginForm.controls.username.errors?.required">
+                        username obbligatorio
+                    </p>
+                    <p *ngIf="loginForm.controls.username.errors?.admin">
+                        Non puoi usare l'utente amministratore
+                    </p>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input [class.is-invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched" 
+                formControlName="password"  type="password" name="password" class="form-control ">
+                <div class="invalid-feedback">
+                    <p *ngIf="loginForm.controls.password.errors?.required">
+                        password obbligatoria
+                    </p>
+                    <p *ngIf="loginForm.controls.password.errors?.minlength">
+                        almeno 8 caratteri
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="form-check form-switch mb-3">
+                <input (change)="cambiaLogin()" formControlName="loginemail" 
+                type="checkbox" name="loginemail" id="loginemail" class="form-check-input">
+                <label for="loginemail" class="form-check-label">login tramite email</label>
+            </div>
+
+            <div class="input-group mb-3" *ngIf="loginForm.controls.loginemail.value">
+                <label for="email" class="input-group-text">E-mail</label>
+                <input [class.is-invalid]="loginForm.controls.email.invalid && loginForm.controls.email.touched" 
+                formControlName="email" type="email" name="email" id="email" class="form-control">
+                <div class="invalid-feedback">
+                    <p *ngIf="loginForm.controls.email.errors?.required">
+                        email obbligatoria
+                    </p>
+                    <p *ngIf="loginForm.controls.email.errors?.email">
+                        Controlla la correttezza dell'indirizzo e-mail
+                    </p>
+                </div>
+            </div>
+
+            
+
+            <div class="form-check form-switch mb-3">
+                <input formControlName="datiPagamento" type="checkbox" id="datiPagamento" class="form-check-input">
+                <label for="datiPagamento" class="form-check-label">dati di pagamento</label>
+            </div>
+
+            <div class="mb-3" *ngIf="loginForm.controls.datiPagamento.value">
+                <label for="numero" class="form-label">numero di carta</label>
+                <input type="text" formControlName="numero" id="numero" class="form-control" minlength="16">
+                <label for="codice" class="form-label">codice di sicurezza</label>
+                <input type="number" formControlName="codice" id="codice" class="form-control" minlength="3" maxlength="3">
+
+            </div>
+
+           
+
+
+
+            <input type="submit" value="accedi" class="btn btn-primary" [disabled]="loginForm.invalid">
+        </form>
+
+
+
+
+
+
+    </div>
+    <div class="col">
+        <h3>dati del form</h3>
+
+        <pre>
+            {{loginForm.value | json}}
+        </pre>
+
+        <h3>Stato del form</h3>
+        <ul>
+            <li>Form touched: {{loginForm.touched}}</li>
+            <li>Form dirty: {{loginForm.dirty}}</li>
+            <li>Form valid: {{loginForm.valid}}</li>
+        </ul>
+
+
+
+    </div>
+</div>
