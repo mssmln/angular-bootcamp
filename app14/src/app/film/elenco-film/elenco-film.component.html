@@ -1,0 +1,17 @@
+<h2>Elenco film</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>cognome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of films">
+            <td>{{f.id}}</td>
+            <td>{{f.titolo}}</td>
+            <td>{{f.genere}}</td>
+        </tr>
+    </tbody>
+</table>

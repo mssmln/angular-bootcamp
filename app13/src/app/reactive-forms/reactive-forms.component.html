@@ -1,48 +1,45 @@
-<h2>reactive forms</h2>
+<h2>Reactive forms</h2>
 
 <div class="row">
     <div class="col">
-        <h3>login form</h3>
+        <h3>Login form</h3>
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
-                <label for="username" class="form-label">username</label>
-                <!-- con username il required l'ho assegnato nel ts tramite il Validators.required, giù nella password l'ho lasciato così per mostrare entrambi i modi -->
-                <input [class.is-invalid]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" 
-                formControlName="username" type="text" name="username" class="form-control ">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" formControlName="username"
+                    [class.is-invalid]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
                 <div class="invalid-feedback">
-                    username obbligatorio
+                    Lo username è obbligatorio
                 </div>
             </div>
+
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input [class.is-invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched" 
-                formControlName="password" required type="password" name="password" minlength="8" class="form-control ">
+                <input type="password" name="password" class="form-control" formControlName="password"
+                    [class.is-invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched">
                 <div class="invalid-feedback">
                     <p *ngIf="loginForm.controls.password.errors?.required">
-                        password obbligatoria
+                        La password è obbligatoria
                     </p>
                     <p *ngIf="loginForm.controls.password.errors?.minlength">
-                        almeno 8 caratteri
+                        La password deve contenere almeno 8 caratteri
                     </p>
-
                 </div>
             </div>
 
-            <fieldset formGroupName="contatti" class="mb-3">
-                <legend>contatti</legend>
+            <fieldset class="mb-3" formGroupName="contatti">
+                <legend>Contatti</legend>
                 <div class="mb-3">
-                    <label for="telefono" class="form-label">Numero di telefono</label>
-                    <input type="tel" formControlName="telefono" id="telefono" 
-                        class="form-control">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="tel" formControlName="telefono" id="telefono" class="form-control">
                 </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="email" formControlName="email" id="email"  class="form-control">
+                    <input type="email" formControlName="email" id="email" class="form-control">
                 </div>
             </fieldset>
-
-
 
             <input type="submit" value="accedi" class="btn btn-primary" [disabled]="loginForm.invalid">
         </form>
@@ -50,24 +47,18 @@
 
 
 
-
-
     </div>
     <div class="col">
-        <h3>dati del form</h3>
-
+        <h3>Dati del form</h3>
         <pre>
             {{loginForm.value | json}}
         </pre>
-
         <h3>Stato del form</h3>
         <ul>
             <li>Form touched: {{loginForm.touched}}</li>
             <li>Form dirty: {{loginForm.dirty}}</li>
             <li>Form valid: {{loginForm.valid}}</li>
         </ul>
-
-
 
     </div>
 </div>

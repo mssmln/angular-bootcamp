@@ -8,13 +8,35 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 
 const routes: Routes = [
-  {path: 'html5',component: Html5FormsComponent},
-  {path: 'bootstrap',component: BootstrapFormsComponent},
-  {path: 'template',component: TemplateFormsComponent},
-  {path: 'reactive',component: ReactiveFormsComponent},
-  {path: 'reactive-builder',component: ReactiveFormBuilderComponent},
-  {path: '',component: HomeComponent,pathMatch: 'full'},
-  {path: '**',redirectTo: ''}
+  {
+    path: 'html5',
+    component: Html5FormsComponent
+  },
+  {
+    path: 'bootstrap',
+    component: BootstrapFormsComponent
+  },
+  {
+    path: 'template',
+    component: TemplateFormsComponent
+  },
+  {
+    path: 'reactive-builder',
+    component: ReactiveFormBuilderComponent
+  },
+  {
+    path: 'reactive',
+    component: ReactiveFormsComponent
+  },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({

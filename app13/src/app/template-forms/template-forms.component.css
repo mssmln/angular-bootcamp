@@ -1,17 +1,20 @@
-/* input.ng-toucned,select.ng-touched{
-    background-color:red;
-} */
-
-
-/* .ng-touched:not(form){
-    background-color: blue;
+/*
+input.ng-touched, select.ng-touched, textarea.ng-touched{
+    background-color: cadetblue;
 }
 
+.ng-touched:not(form){
+    background-color: cadetblue;
+}
+
+
 .ng-dirty:not(form){
-    background-color: green;
-} */
+    background-color: chartreuse;
+}
+*/
+/*
+.ng-invalid:not(form){
+    outline: 5px dashed red;
+}
 
-
-/* .ng-invalid:not(form){
-    outline:5px dashed red;
-} */
+*/
